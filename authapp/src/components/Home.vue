@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -26,26 +27,50 @@
         </div>
       </div>
     </nav>
+
     <section>
       <div class="container mt-5">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-lg-6 offset-lg-3 col-sm-10 offset-sm-1">
             <ul class="list-group">
-              <li class="list-group-item">Name : {{ user.name }}</li>
+              <li class="list-group-item mt-5 ">Name : {{ user.name }}</li>
               <li class="list-group-item">Email : {{ user.email }}</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
+
+
+    <nav
+      class="navbar fixed-bottom navbar-light bg-dark"
+      style="padding-top: 20px"
+    >
+      <div class="container">
+        <span class="navbar-text text-light">
+          home page ©grupo77, aplicación de login de usuario, Frontend
+        </span>
+      </div>
+    </nav>
+
+
+
+
   </div>
 </template>
+
+
+
+
+
+
+
 <script>
 import VueJwtDecode from "vue-jwt-decode";
 export default {
   data() {
     return {
-      user: {}
+      user: {},
     };
   },
   methods: {
@@ -58,11 +83,11 @@ export default {
     logUserOut() {
       localStorage.removeItem("jwt");
       this.$router.push("/");
-    }
+    },
   },
   created() {
     this.getUserDetails();
-  }
+  },
 };
 </script>
 <style scoped></style>
